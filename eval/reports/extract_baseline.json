@@ -1,0 +1,1997 @@
+{
+  "summary": {
+    "documents": 21,
+    "fields": {
+      "invoice_number": {
+        "tp": 21,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 21
+      },
+      "invoice_date": {
+        "tp": 21,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 21
+      },
+      "vendor": {
+        "tp": 21,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 21
+      },
+      "currency": {
+        "tp": 21,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 21
+      },
+      "subtotal": {
+        "tp": 21,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 21
+      },
+      "tax": {
+        "tp": 21,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 21
+      },
+      "total": {
+        "tp": 21,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 21
+      },
+      "purchase_order": {
+        "tp": 16,
+        "fp": 0,
+        "fn": 2,
+        "tn": 3,
+        "precision": 1.0,
+        "recall": 0.889,
+        "f1": 0.941,
+        "support": 18
+      },
+      "payment_terms": {
+        "tp": 18,
+        "fp": 3,
+        "fn": 0,
+        "tn": 0,
+        "precision": 0.857,
+        "recall": 1.0,
+        "f1": 0.923,
+        "support": 18
+      }
+    },
+    "micro": {
+      "tp": 181,
+      "fp": 3,
+      "fn": 2,
+      "precision": 0.984,
+      "recall": 0.989,
+      "f1": 0.986
+    },
+    "doc_exact_match": 17,
+    "doc_exact_rate": 0.81,
+    "hallucination_rate": 0.5,
+    "absent_cells": 6,
+    "grounded_rate": 0.995,
+    "ungrounded_values": 1,
+    "schema_clean_rate": 1.0,
+    "arithmetic": {
+      "inconsistent_docs": 3,
+      "detected": 3,
+      "false_alarms": 0,
+      "consistent_docs": 18
+    },
+    "mean_seconds": 13.33,
+    "median_seconds": 13.2,
+    "mean_calls": 1,
+    "wall_seconds": 280.1,
+    "model": "qwen2.5:3b",
+    "max_repairs": 2
+  },
+  "rows": [
+    {
+      "document": "aliases_09.pdf",
+      "variant": "aliases",
+      "values": {
+        "invoice_number": "INV-2025-8301",
+        "invoice_date": "2025-12-10",
+        "vendor": "Northwind Freight",
+        "currency": "EUR",
+        "subtotal": "1925.50",
+        "tax": "365.85",
+        "total": "2291.35",
+        "purchase_order": "PO-12957",
+        "payment_terms": "2/10 net 30"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2025-8301",
+          "got": "INV-2025-8301",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2025-12-10",
+          "got": "2025-12-10",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Northwind Freight",
+          "got": "Northwind Freight",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "EUR",
+          "got": "EUR",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "1925.50",
+          "got": "1925.50",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "365.85",
+          "got": "365.85",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "2291.35",
+          "got": "2291.35",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": "PO-12957",
+          "got": "PO-12957",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "payment_terms": {
+          "expected": "2/10 net 30",
+          "got": "2/10 net 30",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": true,
+        "delta": 0.0,
+        "reason": ""
+      },
+      "seconds": 14.17,
+      "calls": 1
+    },
+    {
+      "document": "aliases_10.pdf",
+      "variant": "aliases",
+      "values": {
+        "invoice_number": "INV-2024-9088",
+        "invoice_date": "2024-04-02",
+        "vendor": "Baltic Paper Works",
+        "currency": "EUR",
+        "subtotal": "3715.33",
+        "tax": "260.07",
+        "total": "3975.40",
+        "purchase_order": "PO-42455",
+        "payment_terms": "2/10 net 30"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2024-9088",
+          "got": "INV-2024-9088",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2024-04-02",
+          "got": "2024-04-02",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Baltic Paper Works",
+          "got": "Baltic Paper Works",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "EUR",
+          "got": "EUR",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "3715.33",
+          "got": "3715.33",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "260.07",
+          "got": "260.07",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "3975.40",
+          "got": "3975.40",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": "PO-42455",
+          "got": "PO-42455",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "payment_terms": {
+          "expected": "2/10 net 30",
+          "got": "2/10 net 30",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": true,
+        "delta": 0.0,
+        "reason": ""
+      },
+      "seconds": 14.33,
+      "calls": 1
+    },
+    {
+      "document": "aliases_11.pdf",
+      "variant": "aliases",
+      "values": {
+        "invoice_number": "INV-2024-3725",
+        "invoice_date": "2024-07-15",
+        "vendor": "Sierra Components Ltd",
+        "currency": "USD",
+        "subtotal": "2691.38",
+        "tax": "188.40",
+        "total": "2879.78",
+        "purchase_order": "PO-66429",
+        "payment_terms": "Due on receipt"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2024-3725",
+          "got": "INV-2024-3725",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2024-07-15",
+          "got": "2024-07-15",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Sierra Components Ltd",
+          "got": "Sierra Components Ltd",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "USD",
+          "got": "USD",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "2691.38",
+          "got": "2691.38",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "188.40",
+          "got": "188.40",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "2879.78",
+          "got": "2879.78",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": "PO-66429",
+          "got": "PO-66429",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "payment_terms": {
+          "expected": "Due on receipt",
+          "got": "Due on receipt",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": true,
+        "delta": 0.0,
+        "reason": ""
+      },
+      "seconds": 13.65,
+      "calls": 1
+    },
+    {
+      "document": "columns_03.pdf",
+      "variant": "columns",
+      "values": {
+        "invoice_number": "INV-2024-6054",
+        "invoice_date": "2024-11-18",
+        "vendor": "Northwind Freight Services",
+        "currency": "GBP",
+        "subtotal": "965.80",
+        "tax": "67.61",
+        "total": "1033.41",
+        "purchase_order": "PO-58810",
+        "payment_terms": "Net 30"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2024-6054",
+          "got": "INV-2024-6054",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2024-11-18",
+          "got": "2024-11-18",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Northwind Freight Services",
+          "got": "Northwind Freight Services",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "GBP",
+          "got": "GBP",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "965.80",
+          "got": "965.80",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "67.61",
+          "got": "67.61",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "1033.41",
+          "got": "1033.41",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": "PO-58810",
+          "got": "PO-58810",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "payment_terms": {
+          "expected": "Net 30",
+          "got": "Net 30",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": true,
+        "delta": -0.0,
+        "reason": ""
+      },
+      "seconds": 13.12,
+      "calls": 1
+    },
+    {
+      "document": "columns_04.pdf",
+      "variant": "columns",
+      "values": {
+        "invoice_number": "INV-2024-1976",
+        "invoice_date": "2024-04-20",
+        "vendor": "Meridian Optics",
+        "currency": "GBP",
+        "subtotal": "2443.22",
+        "tax": "513.08",
+        "total": "2956.30",
+        "purchase_order": "PO-51175",
+        "payment_terms": "2/10 net 30"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2024-1976",
+          "got": "INV-2024-1976",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2024-04-20",
+          "got": "2024-04-20",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Meridian Optics",
+          "got": "Meridian Optics",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "GBP",
+          "got": "GBP",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "2443.22",
+          "got": "2443.22",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "513.08",
+          "got": "513.08",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "2956.30",
+          "got": "2956.30",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": "PO-51175",
+          "got": "PO-51175",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "payment_terms": {
+          "expected": "2/10 net 30",
+          "got": "2/10 net 30",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": true,
+        "delta": -0.0,
+        "reason": ""
+      },
+      "seconds": 13.73,
+      "calls": 1
+    },
+    {
+      "document": "columns_05.pdf",
+      "variant": "columns",
+      "values": {
+        "invoice_number": "INV-2025-5911",
+        "invoice_date": "2025-03-08",
+        "vendor": "Meridian Optics",
+        "currency": "USD",
+        "subtotal": "3391.29",
+        "tax": "237.39",
+        "total": "3628.68",
+        "purchase_order": "PO-20728",
+        "payment_terms": "Due on receipt"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2025-5911",
+          "got": "INV-2025-5911",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2025-03-08",
+          "got": "2025-03-08",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Meridian Optics",
+          "got": "Meridian Optics",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "USD",
+          "got": "USD",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "3391.29",
+          "got": "3391.29",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "237.39",
+          "got": "237.39",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "3628.68",
+          "got": "3628.68",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": "PO-20728",
+          "got": "PO-20728",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "payment_terms": {
+          "expected": "Due on receipt",
+          "got": "Due on receipt",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": true,
+        "delta": 0.0,
+        "reason": ""
+      },
+      "seconds": 12.21,
+      "calls": 1
+    },
+    {
+      "document": "distractor_06.pdf",
+      "variant": "distractor",
+      "values": {
+        "invoice_number": "INV-2025-8353",
+        "invoice_date": "2025-10-10",
+        "vendor": "Meridian Optics",
+        "currency": "USD",
+        "subtotal": "4707.22",
+        "tax": "0.00",
+        "total": "4707.22",
+        "purchase_order": "PO-77100",
+        "payment_terms": "2/10 net 30"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2025-8353",
+          "got": "INV-2025-8353",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2025-10-10",
+          "got": "2025-10-10",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Meridian Optics",
+          "got": "Meridian Optics",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "USD",
+          "got": "USD",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "4707.22",
+          "got": "4707.22",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "0.00",
+          "got": "0.00",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "4707.22",
+          "got": "4707.22",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": "PO-77100",
+          "got": "PO-77100",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "payment_terms": {
+          "expected": "2/10 net 30",
+          "got": "2/10 net 30",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": true,
+        "delta": 0.0,
+        "reason": ""
+      },
+      "seconds": 14.55,
+      "calls": 1
+    },
+    {
+      "document": "distractor_07.pdf",
+      "variant": "distractor",
+      "values": {
+        "invoice_number": "INV-2024-9011",
+        "invoice_date": "2024-01-14",
+        "vendor": "Northwind Freight Services",
+        "currency": "USD",
+        "subtotal": "4622.25",
+        "tax": "0.00",
+        "total": "4622.25",
+        "purchase_order": null,
+        "payment_terms": "Due on receipt"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2024-9011",
+          "got": "INV-2024-9011",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2024-01-14",
+          "got": "2024-01-14",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Northwind Freight Services",
+          "got": "Northwind Freight Services",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "USD",
+          "got": "USD",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "4622.25",
+          "got": "4622.25",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "0.00",
+          "got": "0.00",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "4622.25",
+          "got": "4622.25",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": "PO-83148",
+          "got": null,
+          "correct": false,
+          "absent_gold": false,
+          "predicted": false
+        },
+        "payment_terms": {
+          "expected": "Due on receipt",
+          "got": "Due on receipt",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": true,
+        "delta": 0.0,
+        "reason": ""
+      },
+      "seconds": 14.4,
+      "calls": 1
+    },
+    {
+      "document": "distractor_08.pdf",
+      "variant": "distractor",
+      "values": {
+        "invoice_number": "INV-2025-9137",
+        "invoice_date": "2025-08-19",
+        "vendor": "Baltic Paper Works",
+        "currency": "GBP",
+        "subtotal": "441.81",
+        "tax": "0.00",
+        "total": "441.81",
+        "purchase_order": "PO-45381",
+        "payment_terms": "2/10 net 30"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2025-9137",
+          "got": "INV-2025-9137",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2025-08-19",
+          "got": "2025-08-19",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Baltic Paper Works",
+          "got": "Baltic Paper Works",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "GBP",
+          "got": "GBP",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "441.81",
+          "got": "441.81",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "0.00",
+          "got": "0.00",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "441.81",
+          "got": "441.81",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": "PO-45381",
+          "got": "PO-45381",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "payment_terms": {
+          "expected": "2/10 net 30",
+          "got": "2/10 net 30",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": true,
+        "delta": 0.0,
+        "reason": ""
+      },
+      "seconds": 15.12,
+      "calls": 1
+    },
+    {
+      "document": "inconsistent_18.pdf",
+      "variant": "inconsistent",
+      "values": {
+        "invoice_number": "INV-2025-8870",
+        "invoice_date": "2025-05-16",
+        "vendor": "Northwind Freight",
+        "currency": "USD",
+        "subtotal": "521.94",
+        "tax": "0.00",
+        "total": "611.94",
+        "purchase_order": "PO-54909",
+        "payment_terms": "Due on receipt"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2025-8870",
+          "got": "INV-2025-8870",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2025-05-16",
+          "got": "2025-05-16",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Northwind Freight",
+          "got": "Northwind Freight",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "USD",
+          "got": "USD",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "521.94",
+          "got": "521.94",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "0.00",
+          "got": "0.00",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "611.94",
+          "got": "611.94",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": "PO-54909",
+          "got": "PO-54909",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "payment_terms": {
+          "expected": "Due on receipt",
+          "got": "Due on receipt",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": false,
+        "delta": -90.0,
+        "reason": "subtotal + tax != total"
+      },
+      "seconds": 12.86,
+      "calls": 1
+    },
+    {
+      "document": "inconsistent_19.pdf",
+      "variant": "inconsistent",
+      "values": {
+        "invoice_number": "INV-2024-9459",
+        "invoice_date": "2024-04-01",
+        "vendor": "Sierra Components Ltd",
+        "currency": "GBP",
+        "subtotal": "4570.61",
+        "tax": "868.42",
+        "total": "5404.03",
+        "purchase_order": "PO-81194",
+        "payment_terms": "Net 30"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2024-9459",
+          "got": "INV-2024-9459",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2024-04-01",
+          "got": "2024-04-01",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Sierra Components Ltd",
+          "got": "Sierra Components Ltd",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "GBP",
+          "got": "GBP",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "4570.61",
+          "got": "4570.61",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "868.42",
+          "got": "868.42",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "5404.03",
+          "got": "5404.03",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": "PO-81194",
+          "got": "PO-81194",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "payment_terms": {
+          "expected": "Net 30",
+          "got": "Net 30",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": false,
+        "delta": 35.0,
+        "reason": "subtotal + tax != total"
+      },
+      "seconds": 13.37,
+      "calls": 1
+    },
+    {
+      "document": "inconsistent_20.pdf",
+      "variant": "inconsistent",
+      "values": {
+        "invoice_number": "INV-2024-5278",
+        "invoice_date": "2024-06-17",
+        "vendor": "Meridian Optics",
+        "currency": "USD",
+        "subtotal": "4370.65",
+        "tax": "830.42",
+        "total": "5166.07",
+        "purchase_order": "PO-79807",
+        "payment_terms": "Due on receipt"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2024-5278",
+          "got": "INV-2024-5278",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2024-06-17",
+          "got": "2024-06-17",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Meridian Optics",
+          "got": "Meridian Optics",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "USD",
+          "got": "USD",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "4370.65",
+          "got": "4370.65",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "830.42",
+          "got": "830.42",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "5166.07",
+          "got": "5166.07",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": "PO-79807",
+          "got": "PO-79807",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "payment_terms": {
+          "expected": "Due on receipt",
+          "got": "Due on receipt",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": false,
+        "delta": 35.0,
+        "reason": "subtotal + tax != total"
+      },
+      "seconds": 13.93,
+      "calls": 1
+    },
+    {
+      "document": "no_po_12.pdf",
+      "variant": "no_po",
+      "values": {
+        "invoice_number": "INV-2025-4780",
+        "invoice_date": "2025-02-05",
+        "vendor": "Sierra Components Ltd",
+        "currency": "USD",
+        "subtotal": "944.70",
+        "tax": "66.13",
+        "total": "1010.83",
+        "purchase_order": null,
+        "payment_terms": "Net 14"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2025-4780",
+          "got": "INV-2025-4780",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2025-02-05",
+          "got": "2025-02-05",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Sierra Components Ltd",
+          "got": "Sierra Components Ltd",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "USD",
+          "got": "USD",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "944.70",
+          "got": "944.70",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "66.13",
+          "got": "66.13",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "1010.83",
+          "got": "1010.83",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": null,
+          "got": null,
+          "correct": true,
+          "absent_gold": true,
+          "predicted": false
+        },
+        "payment_terms": {
+          "expected": "Net 14",
+          "got": "Net 14",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": true,
+        "delta": 0.0,
+        "reason": ""
+      },
+      "seconds": 12.19,
+      "calls": 1
+    },
+    {
+      "document": "no_po_13.pdf",
+      "variant": "no_po",
+      "values": {
+        "invoice_number": "INV-2024-5304",
+        "invoice_date": "2024-01-10",
+        "vendor": "Northwind Freight",
+        "currency": "USD",
+        "subtotal": "801.77",
+        "tax": "152.34",
+        "total": "954.11",
+        "purchase_order": null,
+        "payment_terms": "Due on receipt"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2024-5304",
+          "got": "INV-2024-5304",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2024-01-10",
+          "got": "2024-01-10",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Northwind Freight",
+          "got": "Northwind Freight",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "USD",
+          "got": "USD",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "801.77",
+          "got": "801.77",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "152.34",
+          "got": "152.34",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "954.11",
+          "got": "954.11",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": null,
+          "got": null,
+          "correct": true,
+          "absent_gold": true,
+          "predicted": false
+        },
+        "payment_terms": {
+          "expected": "Due on receipt",
+          "got": "Due on receipt",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": true,
+        "delta": 0.0,
+        "reason": ""
+      },
+      "seconds": 11.94,
+      "calls": 1
+    },
+    {
+      "document": "no_po_14.pdf",
+      "variant": "no_po",
+      "values": {
+        "invoice_number": "INV-2024-8481",
+        "invoice_date": "2024-11-28",
+        "vendor": "Northwind Freight Services",
+        "currency": "GBP",
+        "subtotal": "3854.05",
+        "tax": "809.35",
+        "total": "4663.40",
+        "purchase_order": null,
+        "payment_terms": "2/10 net 30"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2024-8481",
+          "got": "INV-2024-8481",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2024-11-28",
+          "got": "2024-11-28",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Northwind Freight Services",
+          "got": "Northwind Freight Services",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "GBP",
+          "got": "GBP",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "3854.05",
+          "got": "3854.05",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "809.35",
+          "got": "809.35",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "4663.40",
+          "got": "4663.40",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": null,
+          "got": null,
+          "correct": true,
+          "absent_gold": true,
+          "predicted": false
+        },
+        "payment_terms": {
+          "expected": "2/10 net 30",
+          "got": "2/10 net 30",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": true,
+        "delta": 0.0,
+        "reason": ""
+      },
+      "seconds": 12.87,
+      "calls": 1
+    },
+    {
+      "document": "no_terms_15.pdf",
+      "variant": "no_terms",
+      "values": {
+        "invoice_number": "INV-2025-7560",
+        "invoice_date": "2025-04-02",
+        "vendor": "Sierra Components Ltd",
+        "currency": "EUR",
+        "subtotal": "435.19",
+        "tax": "30.46",
+        "total": "465.65",
+        "purchase_order": "PO-67753",
+        "payment_terms": "Payment within the stated terms. Thank you."
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2025-7560",
+          "got": "INV-2025-7560",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2025-04-02",
+          "got": "2025-04-02",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Sierra Components Ltd",
+          "got": "Sierra Components Ltd",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "EUR",
+          "got": "EUR",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "435.19",
+          "got": "435.19",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "30.46",
+          "got": "30.46",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "465.65",
+          "got": "465.65",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": "PO-67753",
+          "got": "PO-67753",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "payment_terms": {
+          "expected": null,
+          "got": "Payment within the stated terms. Thank you.",
+          "correct": false,
+          "absent_gold": true,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": true,
+        "delta": 0.0,
+        "reason": ""
+      },
+      "seconds": 13.1,
+      "calls": 1
+    },
+    {
+      "document": "no_terms_16.pdf",
+      "variant": "no_terms",
+      "values": {
+        "invoice_number": "INV-2024-2677",
+        "invoice_date": "2024-10-01",
+        "vendor": "Northwind Freight",
+        "currency": "USD",
+        "subtotal": "827.92",
+        "tax": "0.00",
+        "total": "827.92",
+        "purchase_order": null,
+        "payment_terms": "Net 30"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2024-2677",
+          "got": "INV-2024-2677",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2024-10-01",
+          "got": "2024-10-01",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Northwind Freight",
+          "got": "Northwind Freight",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "USD",
+          "got": "USD",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "827.92",
+          "got": "827.92",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "0.00",
+          "got": "0.00",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "827.92",
+          "got": "827.92",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": "PO-57659",
+          "got": null,
+          "correct": false,
+          "absent_gold": false,
+          "predicted": false
+        },
+        "payment_terms": {
+          "expected": null,
+          "got": "Net 30",
+          "correct": false,
+          "absent_gold": true,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [
+        "payment_terms"
+      ],
+      "arithmetic": {
+        "ok": true,
+        "delta": 0.0,
+        "reason": ""
+      },
+      "seconds": 12.11,
+      "calls": 1
+    },
+    {
+      "document": "no_terms_17.pdf",
+      "variant": "no_terms",
+      "values": {
+        "invoice_number": "INV-2025-3433",
+        "invoice_date": "2025-05-21",
+        "vendor": "Northwind Freight",
+        "currency": "EUR",
+        "subtotal": "4591.59",
+        "tax": "872.40",
+        "total": "5463.99",
+        "purchase_order": "PO-72147",
+        "payment_terms": "Payment within the stated terms. Thank you."
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2025-3433",
+          "got": "INV-2025-3433",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2025-05-21",
+          "got": "2025-05-21",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Northwind Freight",
+          "got": "Northwind Freight",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "EUR",
+          "got": "EUR",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "4591.59",
+          "got": "4591.59",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "872.40",
+          "got": "872.40",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "5463.99",
+          "got": "5463.99",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": "PO-72147",
+          "got": "PO-72147",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "payment_terms": {
+          "expected": null,
+          "got": "Payment within the stated terms. Thank you.",
+          "correct": false,
+          "absent_gold": true,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": true,
+        "delta": 0.0,
+        "reason": ""
+      },
+      "seconds": 12.34,
+      "calls": 1
+    },
+    {
+      "document": "plain_00.pdf",
+      "variant": "plain",
+      "values": {
+        "invoice_number": "INV-2025-1791",
+        "invoice_date": "2025-09-03",
+        "vendor": "Baltic Paper Works",
+        "currency": "EUR",
+        "subtotal": "560.53",
+        "tax": "0.00",
+        "total": "560.53",
+        "purchase_order": "PO-76510",
+        "payment_terms": "Net 14"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2025-1791",
+          "got": "INV-2025-1791",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2025-09-03",
+          "got": "2025-09-03",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Baltic Paper Works",
+          "got": "Baltic Paper Works",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "EUR",
+          "got": "EUR",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "560.53",
+          "got": "560.53",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "0.00",
+          "got": "0.00",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "560.53",
+          "got": "560.53",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": "PO-76510",
+          "got": "PO-76510",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "payment_terms": {
+          "expected": "Net 14",
+          "got": "Net 14",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": true,
+        "delta": 0.0,
+        "reason": ""
+      },
+      "seconds": 13.2,
+      "calls": 1
+    },
+    {
+      "document": "plain_01.pdf",
+      "variant": "plain",
+      "values": {
+        "invoice_number": "INV-2025-7851",
+        "invoice_date": "2025-04-03",
+        "vendor": "Northwind Freight",
+        "currency": "EUR",
+        "subtotal": "544.54",
+        "tax": "114.35",
+        "total": "658.89",
+        "purchase_order": "PO-17747",
+        "payment_terms": "Net 30"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2025-7851",
+          "got": "INV-2025-7851",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2025-04-03",
+          "got": "2025-04-03",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Northwind Freight",
+          "got": "Northwind Freight",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "EUR",
+          "got": "EUR",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "544.54",
+          "got": "544.54",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "114.35",
+          "got": "114.35",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "658.89",
+          "got": "658.89",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": "PO-17747",
+          "got": "PO-17747",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "payment_terms": {
+          "expected": "Net 30",
+          "got": "Net 30",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": true,
+        "delta": 0.0,
+        "reason": ""
+      },
+      "seconds": 13.07,
+      "calls": 1
+    },
+    {
+      "document": "plain_02.pdf",
+      "variant": "plain",
+      "values": {
+        "invoice_number": "INV-2024-7499",
+        "invoice_date": "2024-04-02",
+        "vendor": "Northwind Freight Services",
+        "currency": "GBP",
+        "subtotal": "338.01",
+        "tax": "23.66",
+        "total": "361.67",
+        "purchase_order": "PO-47959",
+        "payment_terms": "2/10 net 30"
+      },
+      "fields": {
+        "invoice_number": {
+          "expected": "INV-2024-7499",
+          "got": "INV-2024-7499",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "invoice_date": {
+          "expected": "2024-04-02",
+          "got": "2024-04-02",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "vendor": {
+          "expected": "Northwind Freight Services",
+          "got": "Northwind Freight Services",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "currency": {
+          "expected": "GBP",
+          "got": "GBP",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "subtotal": {
+          "expected": "338.01",
+          "got": "338.01",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "tax": {
+          "expected": "23.66",
+          "got": "23.66",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "total": {
+          "expected": "361.67",
+          "got": "361.67",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "purchase_order": {
+          "expected": "PO-47959",
+          "got": "PO-47959",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        },
+        "payment_terms": {
+          "expected": "2/10 net 30",
+          "got": "2/10 net 30",
+          "correct": true,
+          "absent_gold": false,
+          "predicted": true
+        }
+      },
+      "errors": {},
+      "ungrounded": [],
+      "arithmetic": {
+        "ok": true,
+        "delta": 0.0,
+        "reason": ""
+      },
+      "seconds": 13.69,
+      "calls": 1
+    }
+  ]
+}

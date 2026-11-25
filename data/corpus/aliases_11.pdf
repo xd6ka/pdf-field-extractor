@@ -1,0 +1,53 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 5 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 1101 >>
+stream
+BT
+/F1 14.0 Tf 1 0 0 1 60.00 790.00 Tm (Sierra Components Ltd) Tj
+/F1 9.0 Tf 1 0 0 1 60.00 772.00 Tm (Lisbon, EU) Tj
+/F1 12.0 Tf 1 0 0 1 430.00 790.00 Tm (INVOICE) Tj
+/F1 10.0 Tf 1 0 0 1 60.00 720.00 Tm (Invoice no.) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 720.00 Tm (INV-2024-3725) Tj
+/F1 10.0 Tf 1 0 0 1 60.00 702.00 Tm (Invoice date) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 702.00 Tm (15.07.2024) Tj
+/F1 10.0 Tf 1 0 0 1 60.00 684.00 Tm (Currency) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 684.00 Tm (USD) Tj
+/F1 10.0 Tf 1 0 0 1 60.00 666.00 Tm (Purchase order) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 666.00 Tm (PO-66429) Tj
+/F1 10.0 Tf 1 0 0 1 60.00 648.00 Tm (Payment terms) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 648.00 Tm (Due on receipt) Tj
+/F1 10.0 Tf 1 0 0 1 60.00 560.00 Tm (Subtotal \(excl. VAT\)) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 560.00 Tm ($2,691.38) Tj
+/F1 10.0 Tf 1 0 0 1 60.00 542.00 Tm (VAT) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 542.00 Tm ($188.40) Tj
+/F1 10.0 Tf 1 0 0 1 60.00 524.00 Tm (Balance due) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 524.00 Tm ($2,879.78) Tj
+/F1 8.0 Tf 1 0 0 1 60.00 120.00 Tm (Payment within the stated terms. Thank you.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000001393 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1490
+%%EOF
