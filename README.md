@@ -9,6 +9,12 @@ literally printed in the document, and one of them is still wrong**. Grounding
 and correctness are different properties, and a pipeline that only checks the
 first one ships the second kind of error.
 
+Part of a three-project set measured on the same machine: this extractor,
+[agent-toolbench](https://github.com/xd6ka/agent-toolbench) (a tool-calling agent
+with its own reliability benchmark), and
+[rag-service](https://github.com/xd6ka/rag-service) (a RAG pipeline served with
+measured p50/p95).
+
 ## Numbers
 
 21 synthetic documents, 7 layout variants × 3, `qwen2.5:3b`, CPU, `temperature 0`.
