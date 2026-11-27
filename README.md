@@ -103,6 +103,66 @@ does the document print something of this field's shape? That question alone
 recovered both recall misses, and it is the difference between the two rows
 of the table above.
 
+## When the page fights back
+
+The table above is the clean case: seven layouts, all of them typeset. A
+single 0.997 says nothing about the documents that actually arrive, so there is
+a second corpus of 12 documents built from the `columns` layout and then
+degraded — two documents per failure mode, gold values untouched:
+
+| degradation | what the page does | exact | F1 |
+| --- | --- | --- | --- |
+| `spaced` | one space between every character | 0/2 | 0.839 |
+| `wrapped` | every amount split before its last two digits, continuation on its own line | 1/2 | 0.971 |
+| `stamped` | `PAID` stamp plus `Original total: €9,999.99` and `Balance carried forward: €1,234.00` | 2/2 | 1.000 |
+| `tiny` | type scaled to 5.5 pt, eight lines of `Clause N: standard terms apply` in the footer | 2/2 | 1.000 |
+| `rotated` | `/Rotate 90`, same content stream | 2/2 | 1.000 |
+| `no_text` | grey rectangles where the text was, no text layer at all | 0/2 | 0.000 |
+
+Overall: doc_exact 7/12 = 0.583, micro precision **1.000**, recall 0.778, F1
+0.875, grounded 0.830, mean 25 s, 1.42 model calls. Precision did not drop:
+every value it returned for a degraded page was one the page actually printed.
+What disappears is recall, and it disappears in ways that are worth naming.
+
+**Two degradations are free.** `rotated` and `plain` produce the identical
+`pdf_lines()` output — rotation is a page attribute, and `pypdf` reads the
+content stream — so a rotated scan is not a threat model for this pipeline,
+whatever it is for a raster-based one. `stamped` is free for a different
+reason: the stamp is a second total, the arithmetic constraint
+(`subtotal + tax == total`) picks the consistent triple, and the model never
+even quotes €9,999.99. Both are in the corpus to prove the guardrails work,
+not because they are hard.
+
+**Character spacing breaks labels, not amounts.** In `spaced`, `Subtotal` is
+printed as `S u b t o t a l`, the vendor comes back as
+`S i e r r a C o m p o n e n t s L t d`, and `2/10 net 30` becomes
+`2 / 10 net 30`, which the schema pattern rejects. The money survives because
+`normalize_money` strips whitespace before matching. The F1 of 0.839 with
+0/2 exact is that split: three fields per document readable, six not.
+
+**A wrapped amount is read twice, wrongly.** In `wrapped-03` the subtotal is
+printed as `$4,062.` with `56` below it; the model returns `4062.00`, dropping
+the continuation and padding a `.00`, while the total `4346.94` comes back
+correct. `4062.00 + 284.38 != 4346.94` fires the arithmetic check with
+`delta = -0.56`. Against the gold triple that is a false alarm — the document
+is self-consistent — and against the extracted triple it is precisely the right
+thing to say: the number is wrong. This is the one case in 12 where the check
+caught an error the model made, and it caught it because two independent
+readings disagreed.
+
+**The best answer gets withheld.** `wrapped-02` returns all nine fields
+correctly, and grounding flags `subtotal` and `total`, because no contiguous
+token `415.61` exists on the page — it is `415.` and `61`. The guardrail
+cannot see a value the layout broke in half, so the caller is told those two
+fields are unsupported. For a downstream system that refuses ungrounded values
+this is a false negative on a *correct* extraction; the honest reading is that
+the page, not the model, is the source of the doubt.
+
+**No text layer means no guess.** Both `no_text` documents return eighteen
+`null`s, three repair calls each, all of them `missing`. The pipeline does not
+substitute an empty string for a page it cannot read; a rasterised invoice
+needs OCR in front of this stage, and nothing here pretends otherwise.
+
 ## Limits
 
 - 21 documents with 9 fields is 189 field decisions, and one document is 4.8
@@ -110,7 +170,8 @@ of the table above.
   treat it as a direction, not a result.
 - Synthetic layouts. Real invoices carry logos, stamps, skewed scans and
   multi-page tables; none of that is here, and none of the numbers above
-  transfer to it.
+  transfer to it. The degraded corpus is synthetic too: six named failure modes
+  applied in isolation, not a photograph of a fax of a scan.
 - One model, one machine: `qwen2.5:3b`, CPU, 4k context, no GPU run.
 - No OCR, no tables spanning pages, no multi-currency documents.
 - Nothing reaches the network except `localhost:11434`.
@@ -121,7 +182,7 @@ of the table above.
 python -m venv venv
 venv\Scripts\activate            # source venv/bin/activate elsewhere
 pip install -r requirements.txt
-pytest -q                        # 42 tests: writer, corpus, normalisation, schema, retrieval, grounding
+pytest -q                        # 48 tests: writer, corpus, normalisation, schema, retrieval, grounding, degradation
 
 ollama serve                     # another terminal
 ollama pull qwen2.5:3b
@@ -129,6 +190,9 @@ ollama pull qwen2.5:3b
 python -c "from pathlib import Path; from synth.corpus import build_corpus; build_corpus(Path('data/corpus'), per_variant=3)"
 python eval\run_eval.py --out eval\reports\extract.json
 python eval\run_eval.py --repairs 0 --out eval\reports\extract_norepair.json
+
+python -c "from pathlib import Path; from synth.degrade import build_degraded_corpus; build_degraded_corpus(Path('data/corpus_degraded'))"
+python eval\run_eval.py --corpus data\corpus_degraded --out eval\reports\extract_degraded.json
 ```
 
 Flags: `--model`, `--repairs N`, `--limit N`, `--corpus path`, `--out path`.

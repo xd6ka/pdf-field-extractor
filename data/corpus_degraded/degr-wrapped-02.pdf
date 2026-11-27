@@ -1,0 +1,56 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 5 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 1195 >>
+stream
+BT
+/F1 14.0 Tf 1 0 0 1 60.00 790.00 Tm (Sierra Components Ltd) Tj
+/F1 9.0 Tf 1 0 0 1 60.00 772.00 Tm (Lisbon, EU) Tj
+/F1 12.0 Tf 1 0 0 1 430.00 790.00 Tm (INVOICE) Tj
+/F1 10.0 Tf 1 0 0 1 60.00 720.00 Tm (Invoice no.) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 720.00 Tm (INV-2024-1245) Tj
+/F1 10.0 Tf 1 0 0 1 60.00 702.00 Tm (Invoice date) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 702.00 Tm (27.09.2024) Tj
+/F1 10.0 Tf 1 0 0 1 60.00 684.00 Tm (Currency) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 684.00 Tm (GBP) Tj
+/F1 10.0 Tf 1 0 0 1 60.00 666.00 Tm (Purchase order) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 666.00 Tm (PO-34930) Tj
+/F1 10.0 Tf 1 0 0 1 60.00 648.00 Tm (Payment terms) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 648.00 Tm (Net 14) Tj
+/F1 10.0 Tf 1 0 0 1 60.00 560.00 Tm (Subtotal) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 560.00 Tm (£415.) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 547.00 Tm (61) Tj
+/F1 10.0 Tf 1 0 0 1 60.00 529.00 Tm (Tax) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 529.00 Tm (£0.) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 516.00 Tm (00) Tj
+/F1 10.0 Tf 1 0 0 1 60.00 498.00 Tm (Total) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 498.00 Tm (£415.) Tj
+/F1 10.0 Tf 1 0 0 1 300.00 485.00 Tm (61) Tj
+/F1 8.0 Tf 1 0 0 1 60.00 81.00 Tm (Payment within the stated terms. Thank you.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000001487 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1584
+%%EOF

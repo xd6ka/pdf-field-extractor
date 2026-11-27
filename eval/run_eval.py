@@ -47,6 +47,44 @@ def evaluate_doc(doc_path: Path, gold_doc: dict, *, model: str, repairs: int) ->
     }
 
 
+def by_variant(rows: list[dict]) -> dict:
+    """Per-variant breakdown: one degradation at a time needs its own row.
+
+    A corpus that mixes layouts only needs the aggregate; a corpus that mixes
+    *degradations* is unreadable without this, because five of six variants can
+    fail while the aggregate still looks like 0.6.
+    """
+    groups: dict[str, list[dict]] = {}
+    for row in rows:
+        groups.setdefault(row["variant"] or "unknown", []).append(row)
+
+    table = {}
+    for variant, group in sorted(groups.items()):
+        tp = fp = fn = 0
+        exact = 0
+        for row in group:
+            if all(cell["correct"] for cell in row["fields"].values()):
+                exact += 1
+            for cell in row["fields"].values():
+                if cell["absent_gold"]:
+                    fp += bool(cell["predicted"])
+                elif cell["correct"]:
+                    tp += 1
+                else:
+                    fn += 1
+        table[variant] = {
+            "documents": len(group),
+            "doc_exact": exact,
+            "doc_exact_rate": round(exact / len(group), 3),
+            "precision": round(tp / (tp + fp), 3) if tp + fp else None,
+            "recall": round(tp / (tp + fn), 3) if tp + fn else None,
+            "f1": round(2 * tp / (2 * tp + fp + fn), 3) if tp + fp + fn else None,
+            "fields_right": tp,
+            "fields_wrong": fn + fp,
+        }
+    return table
+
+
 def summarize(rows: list[dict], gold: dict, seconds: float) -> dict:
     field_stats = {}
     for field in FIELD_ORDER:
@@ -93,6 +131,7 @@ def summarize(rows: list[dict], gold: dict, seconds: float) -> dict:
     return {
         "documents": len(rows),
         "fields": field_stats,
+        "by_variant": by_variant(rows),
         "micro": {
             "tp": micro_tp, "fp": micro_fp, "fn": micro_fn,
             "precision": round(micro_tp / (micro_tp + micro_fp), 3) if micro_tp + micro_fp else None,
@@ -164,6 +203,10 @@ def main() -> int:
                 "wall_seconds"):
         print(f"{key}: {summary[key]}")
     print("micro:", summary["micro"])
+    print("by variant:")
+    for variant, stats in summary["by_variant"].items():
+        print(f"  {variant:18} exact {stats['doc_exact']}/{stats['documents']}  "
+              f"F1={stats['f1']}  wrong_fields={stats['fields_wrong']}")
     print("arithmetic:", summary["arithmetic"])
     print("\nper field:")
     for field, stats in summary["fields"].items():
