@@ -1,0 +1,24 @@
+name: tests
+
+# The extraction tests use the committed 21-invoice fixture and a stub model, so they
+# need pypdf and nothing else — no 3B model, no GPU, no network. The real extraction
+# runs live in the local reports; the CI job checks the code that scores them.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run the tests
+        run: python -m pytest -q

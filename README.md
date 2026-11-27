@@ -1,5 +1,7 @@
 # pdf-field-extractor
 
+[![tests](https://github.com/xd6ka/pdf-field-extractor/actions/workflows/tests.yml/badge.svg)](https://github.com/xd6ka/pdf-field-extractor/actions/workflows/tests.yml)
+
 Pull structured fields out of invoices with a 3B model on a laptop CPU — and
 report field-level precision, recall and F1, hallucination rate, and how often a
 value is grounded in the document rather than plausible.
