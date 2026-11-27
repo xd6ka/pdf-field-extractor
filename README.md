@@ -197,3 +197,7 @@ python eval\run_eval.py --corpus data\corpus_degraded --out eval\reports\extract
 
 Flags: `--model`, `--repairs N`, `--limit N`, `--corpus path`, `--out path`.
 Env: `PDF_MODEL`, `PDF_MAX_REPAIRS`.
+
+## Licence
+
+MIT. See `LICENSE`.
